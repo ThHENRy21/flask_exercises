@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <h1>Register</h1>
+    <!-- Activates the register method in app.py -->
+    <form action="/register" method="POST">
+        <h3>Name</h3>
+        <input autofocus name="name" placeholder="Name" required type="text">
+        <h3>Org:</h3>
+        <select required name="organization">
+            <option disabled selected>Select One:</option>
+            <!-- For each passed value in the orgs array, create a menu option -->
+            {% for organization in organizations %}
+            
+                <option value={{organization}}>{{ organization }}</option>
+            
+            {% endfor %}
+        </select>
+        <br><br>
+        <button type="submit" style="background-color: #005035; border-radius: 7px; color:#A49665">Register</button>
+    </form>
+
+{% endblock %}

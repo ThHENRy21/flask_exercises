@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1>Registered Students</h1>
+    <ul>
+        <!-- For each entry in the registration, print the students name and their affilated org -->
+        {% for name in studentsRegistered %}
+            <li style="list-style: none;">{{ name }} {{ studentsRegistered[name] }}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
